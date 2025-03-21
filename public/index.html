@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Radio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "config": "./config.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WebRTC Radio</h1>
+            <div class="mode-switch">
+                <button id="broadcasterMode">Broadcaster</button>
+                <button id="listenerMode">Listener</button>
+            </div>
+        </header>
+
+        <main>
+            <section id="broadcaster" class="hidden">
+                <div class="controls">
+                    <button id="startBroadcast" class="primary">Start Broadcasting</button>
+                    <button id="stopBroadcast" class="danger hidden">Stop Broadcasting</button>
+                </div>
+                <div class="status">
+                    <div id="vuMeter"></div>
+                    <span id="broadcastStatus">Not Broadcasting</span>
+                </div>
+                <div class="settings">
+                    <label>
+                        Broadcast Name:
+                        <input type="text" id="broadcastName" placeholder="My Radio Station">
+                    </label>
+                </div>
+            </section>
+
+            <section id="listener" class="hidden">
+                <div class="controls">
+                    <button id="connect" class="primary">Connect to Broadcast</button>
+                    <button id="disconnect" class="danger hidden">Disconnect</button>
+                </div>
+                <div class="status">
+                    <div id="listenerVuMeter"></div>
+                    <span id="connectionStatus">Not Connected</span>
+                </div>
+                <div class="broadcast-list">
+                    <h3>Available Broadcasts</h3>
+                    <ul id="broadcastsList"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

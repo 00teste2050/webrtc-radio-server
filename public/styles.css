@@ -1,0 +1,168 @@
+:root {
+    --primary-color: #2196f3;
+    --danger-color: #f44336;
+    --background: #1a1a1a;
+    --text-color: #ffffff;
+    --secondary-bg: #2d2d2d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: var(--background);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mode-switch {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+button.danger {
+    background: var(--danger-color);
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+section {
+    background: var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+#vuMeter, #listenerVuMeter {
+    width: 200px;
+    height: 20px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#vuMeter::before, #listenerVuMeter::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: var(--level);
+    background: linear-gradient(90deg, 
+        var(--primary-color) 0%,
+        #4CAF50 60%,
+        #FFC107 80%,
+        var(--danger-color) 90%
+    );
+    transition: width 0.1s ease;
+}
+
+.settings {
+    margin-top: 1rem;
+}
+
+input[type="text"] {
+    background: var(--background);
+    border: 1px solid #444;
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.broadcast-list {
+    margin-top: 1rem;
+}
+
+#broadcastsList {
+    list-style: none;
+    padding: 0;
+}
+
+.broadcast-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--secondary-bg);
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.broadcast-list li:hover {
+    transform: translateX(5px);
+    background: #3d3d3d;
+}
+
+.broadcast-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.broadcast-info h4 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.broadcast-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.listeners-count {
+    background: var(--primary-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.error-message {
+    color: var(--danger-color);
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    background: rgba(244, 67, 54, 0.1);
+}
