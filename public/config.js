@@ -17,7 +17,7 @@ export const config = {
         volume: 1.0
     },
     signaling: {
-        url: 'wss://your-signaling-server.com',
+        url: 'https://webrtc-radio-server.onrender.com',
         reconnectInterval: 5000,
         maxReconnectAttempts: 5
     },
